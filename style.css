@@ -1,37 +1,93 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-.container{
-    height:100vh;
+.container {
+  height: 100vh;
 }
-header{
-    display:grid;
-    grid-auto-flow: column;
-    grid-template-columns: auto 1fr auto;
-    gap: 5rem;
-    height: 30px;
-    justify-content: center;
+header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  gap: 5rem;
+  height: 60px;
+  padding: 5px 15px;
+  justify-content: center;
 }
-.logo-bar{
-    display:grid;
-    grid-auto-flow: column;
-    height: 30px;
-    place-items: center;
-  
+.logo-bar {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
 }
-.search-bar{
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1fr auto;
-    height: 30px;
-    padding: 0.5rem 6rem;
+.search-bar {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  padding: 0.5rem 6rem;
 }
-.account-bar{
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: auto auto;
-    place-items: center;
+.account-bar {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto auto;
+  place-items: center;
+}
+.user {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 10px;
+  color: blue;
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding: 5px;
+}
+.user-logo {
+  display: grid;
+  justify-self: center;
+  color: blue;
+}
+main {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template:
+    "left-menu main-part" 1fr /
+    auto 1fr;
+  height: 100vh;
+}
+.left-menu {
+  grid-area: left-menu;
+  padding: 0.2rem;
+  border-right: 1px solid #ccc;
+}
+.main-part {
+  grid-area: main-part;
+  display: grid;
+}
+.menu-item {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding: 10px;
+  place-items: center;
+  text-decoration: none;
+  color: inherit;
+}
 
+.menu-item h4 {
+  justify-self: start;
+  padding-top: 3px;
+  padding-right: 20px;
+}
+.menu-item.one {
+  background-color: rgba(130, 127, 127, 0.434);
+}
+.menu-item.one .material-symbols-outlined {
+  color: red;
+}
+.menu-items {
+  padding: 0.5rem 0.2rem;
+  border-bottom: 1px solid #ccc;
 }
