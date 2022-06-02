@@ -27,6 +27,11 @@ header {
   grid-template-columns: 1fr auto;
   padding: 0.5rem 6rem;
 }
+button {
+  border-radius: 0;
+  border-left: none;
+  border: 0.2px solid;
+}
 .account-bar {
   display: grid;
   grid-auto-flow: column;
@@ -117,6 +122,8 @@ main {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   place-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .main-header-item {
   border: 1px solid #ccc;
@@ -130,7 +137,6 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 270px;
-  /* overflow: scroll; */
   gap: 10px;
   padding: 1rem;
 }
@@ -163,6 +169,7 @@ main {
   place-items: center;
   padding: 5px;
 }
+
 .video-description {
   display: grid;
   padding: 10px;
@@ -172,4 +179,60 @@ main {
 .personal-logo img {
   place-self: center;
   border-radius: 50%;
+}
+.left-menu.mobile {
+  display: none;
+}
+
+.main-header.mobile {
+  place-items: start;
+  display: none;
+}
+header.mobile {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  header {
+    display: none;
+  }
+  header.mobile {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .search-bar {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    padding: 0.5rem 0.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left-menu {
+    display: none;
+  }
+  .left-menu.mobile {
+    display: block;
+  }
+
+  .main-header {
+    display: none;
+  }
+  .main-header.mobile {
+    display: grid;
+  }
+}
+@media screen and (max-width: 420px) {
+  .left-menu.mobile {
+    display: none;
+  }
+  input {
+    display: none;
+  }
+  button {
+    background-color: white;
+    border: none;
+  }
 }
